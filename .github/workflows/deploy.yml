@@ -3,7 +3,10 @@ name: Deploy HTML Website
 on:
   push:
     branches:
-      - main
+      - main  # Change to your default branch if different
+
+permissions:
+  contents: write  # Ensure the workflow has permission to push changes
 
 jobs:
   deploy:
@@ -16,5 +19,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
+        github_token: ${{ secrets.MY_KEY }}
+        publish_dir: ./  # The directory containing your HTML files

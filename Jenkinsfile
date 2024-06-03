@@ -4,7 +4,7 @@ pipeline {
         git 'Default' // Replace 'Default Git' with the name you configured in Jenkins for the Git tool
     }
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('test-dockerhubpassword') // Replace 'dockerhub' with your actual credentials ID
+        DOCKERHUB_CREDENTIALS = credentials('dockerdocker') // Replace 'your-dockerhub-credentials-id' with the ID of your Docker Hub credentials
     }
     stages {
         stage('Declarative: Tool Install') {
@@ -57,4 +57,3 @@ pipeline {
         }
     }
 }
-
